@@ -1,0 +1,9 @@
+﻿模型,最优参数
+逻辑回归,"{'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100, 'num_leaves': 31}"
+K近邻,"{'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100, 'num_leaves': 31}"
+支持向量机,"{'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100, 'num_leaves': 31}"
+决策树,"{'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100, 'num_leaves': 31}"
+随机森林,"{'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100, 'num_leaves': 31}"
+朴素贝叶斯,{}
+XGBoost,"{'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100, 'num_leaves': 31}"
+LightGBM,"{'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100, 'num_leaves': 31}"

@@ -1,0 +1,66 @@
+C:\ProgramData\anaconda3\python.exe C:\Users\wjw\Desktop\bysj\step4_explain.py
+==================================================
+加载最优模型与数据...
+✅ 最优模型：SVC
+✅ 最终筛选特征：['area error', 'mean concavity', 'worst area', 'worst concavity', 'worst perimeter', 'worst radius']
+✅ 测试集样本数：84
+
+初始化SHAP解释器（适配模型类型）...
+100%|██████████| 84/84 [00:00<00:00, 165.22it/s]
+原始SHAP值形状：(84, 6)
+SHAP值形状: (84, 6)
+SHAP值非零数: 504
+
+==================================================
+【全局可解释性分析】
+
+特征全局重要性（按SHAP值排序）：
+           feature  mean_abs_shap  importance_rank
+3  worst concavity         0.0331                3
+0       area error         0.0297                4
+1   mean concavity         0.0290                1
+2       worst area         0.0202                2
+5     worst radius         0.0120                5
+4  worst perimeter         0.0031                6
+
+特征影响方向与强度：
+           feature  mean_shap_value effect_direction  abs_effect_strength
+0       area error           0.0065            良性（正）               0.0065
+2       worst area           0.0036            良性（正）               0.0036
+5     worst radius           0.0017            良性（正）               0.0017
+1   mean concavity           0.0010            良性（正）               0.0010
+3  worst concavity          -0.0009            恶性（负）               0.0009
+4  worst perimeter          -0.0003            恶性（负）               0.0003
+
+生成可解释性可视化图表...
+最终SHAP值形状: (84, 6)
+SHAP值范围: -0.2739228802805551 ~ 0.08382406881471371
+✅ 已保存：shap_summary_beeswarm.png
+✅ 已保存：shap_feature_importance_bar.png（特征重要性条形图）
+✅ 已保存：shap_force_single_sample.png（单个样本解释力图）
+✅ 已保存：shap_interaction_worst concavity_area error.png（特征交互图）
+✅ 已保存：shap_interaction_worst concavity_mean concavity.png（特征交互图）
+✅ 已保存：shap_interaction_area error_mean concavity.png（特征交互图）
+
+==================================================
+【可解释性分析量化结论】
+
+1. 全局特征重要性：area error 是推动模型判断为良性的核心特征（SHAP均值=0.0065），
+   worst concavity 是推动模型判断为恶性的核心特征（SHAP均值=-0.0009）。
+2. 特征影响方向：共 4 个特征正向影响（推良性），2 个特征负向影响（推恶性），符合医学认知逻辑。
+3. 模型可靠性：基于SHAP的可解释性分析表明，模型预测依赖于具有临床意义的关键特征，无黑箱风险，适合临床辅助诊断场景。
+4. 特征交互：worst concavity 与 area error 存在显著交互效应，二者共同影响模型预测结果（详见交互图）。
+
+
+✅ 可解释性分析全部完成！
+已保存文件：
+1. shap_summary_beeswarm.png      SHAP蜂群汇总图
+2. shap_feature_importance_bar.png 特征重要性条形图
+3. shap_force_single_sample.png    单个样本解释力图
+4. shap_feature_importance.csv     特征重要性量化表
+5. shap_feature_effect.csv         特征影响方向表
+6. shap_analysis_conclusion.txt    标准化分析结论
+7. shap_values_test_sample.npy     SHAP值矩阵（测试集样本）
+==================================================
+
+进程已结束，退出代码为 0

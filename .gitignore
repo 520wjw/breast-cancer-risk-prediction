@@ -1,0 +1,8 @@
+# 训练好的模型对象
+*.pkl
+
+# IDE / Python
+.idea/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/

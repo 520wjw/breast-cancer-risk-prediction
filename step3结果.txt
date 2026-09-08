@@ -1,0 +1,85 @@
+C:\ProgramData\anaconda3\python.exe C:\Users\wjw\Desktop\bysj\step3_train_models.py
+==================================================
+加载特征选择后的数据...
+训练集：(193, 6)
+测试集：(84, 6)
+
+==================================================
+网格搜索 + 5折交叉验证 训练所有模型...
+
+【逻辑回归】
+Fitting 5 folds for each of 8 candidates, totalling 40 fits
+最优参数：{'C': 0.1, 'penalty': 'l2', 'solver': 'liblinear'}
+交叉验证最优AUC：0.9496
+测试集AUC：0.9406 | 准确率：0.9286
+
+【K近邻】
+Fitting 5 folds for each of 16 candidates, totalling 80 fits
+最优参数：{'metric': 'euclidean', 'n_neighbors': 7, 'weights': 'distance'}
+交叉验证最优AUC：0.8387
+测试集AUC：0.8952 | 准确率：0.9405
+
+【支持向量机】
+Fitting 5 folds for each of 12 candidates, totalling 60 fits
+最优参数：{'C': 0.1, 'gamma': 'scale', 'kernel': 'linear'}
+交叉验证最优AUC：0.9422
+测试集AUC：0.9425 | 准确率：0.9286
+
+【决策树】
+Fitting 5 folds for each of 24 candidates, totalling 120 fits
+最优参数：{'criterion': 'gini', 'max_depth': 3, 'min_samples_split': 2}
+交叉验证最优AUC：0.8092
+测试集AUC：0.7486 | 准确率：0.9167
+
+【随机森林】
+Fitting 5 folds for each of 18 candidates, totalling 90 fits
+最优参数：{'max_depth': 3, 'min_samples_split': 5, 'n_estimators': 100}
+交叉验证最优AUC：0.9587
+测试集AUC：0.8571 | 准确率：0.9167
+
+【朴素贝叶斯】
+交叉验证AUC：0.9311
+测试集AUC：0.9295 | 准确率：0.9048
+
+【XGBoost】
+Fitting 5 folds for each of 27 candidates, totalling 135 fits
+最优参数：{'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100}
+交叉验证最优AUC：0.8538
+测试集AUC：0.8850 | 准确率：0.9167
+
+【LightGBM】
+Fitting 5 folds for each of 81 candidates, totalling 405 fits
+最优参数：{'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100, 'num_leaves': 31}
+交叉验证最优AUC：0.9112
+测试集AUC：0.9397 | 准确率：0.9405
+
+============================================================
+【模型综合对比排名（含交叉验证）】
+         模型     准确率     精确率     召回率    F1分数     AUC  CV_AUC均值  CV_AUC标准差
+0     支持向量机  0.9286  0.9277  1.0000  0.9625  0.9425    0.9422     0.0552
+1      逻辑回归  0.9286  0.9494  0.9740  0.9615  0.9406    0.9496     0.0491
+2  LightGBM  0.9405  0.9390  1.0000  0.9686  0.9397    0.9112     0.0948
+3     朴素贝叶斯  0.9048  0.9859  0.9091  0.9459  0.9295    0.9311     0.0938
+4       K近邻  0.9405  0.9500  0.9870  0.9682  0.8952    0.8387     0.1454
+5   XGBoost  0.9167  0.9167  1.0000  0.9565  0.8850    0.8538     0.1974
+6      随机森林  0.9167  0.9375  0.9740  0.9554  0.8571    0.9587     0.0287
+7       决策树  0.9167  0.9487  0.9610  0.9548  0.7486    0.8092     0.1259
+
+============================================================
+最优模型：**支持向量机**
+测试集AUC：0.9425
+============================================================
+
+正在生成模型对比图表...
+
+🎉 网格搜索+交叉验证+可视化 全部完成！
+新增文件：
+1. model_comparison_with_cv.csv  模型对比表（含交叉验证）
+2. best_params.csv               各模型最优参数
+3. best_model_with_grid.pkl      最优模型（网格搜索后）
+4. model_radar.png               多指标雷达图
+5. model_cv_boxplot.png          交叉验证箱线图
+6. model_roc_all_fixed.png       ROC曲线
+7. best_model_confusion_matrix.png 最优模型混淆矩阵
+
+进程已结束，退出代码为 0

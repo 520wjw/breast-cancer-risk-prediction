@@ -1,0 +1,84 @@
+C:\ProgramData\anaconda3\python.exe C:\Users\wjw\Desktop\bysj\step1_precess.py
+==================================================
+原始数据形状： (569, 31)
+
+==================================================
+【数据基础检查】
+缺失值数量： 0
+数据类型：
+ mean radius                float64
+mean texture               float64
+mean perimeter             float64
+mean area                  float64
+mean smoothness            float64
+mean compactness           float64
+mean concavity             float64
+mean concave points        float64
+mean symmetry              float64
+mean fractal dimension     float64
+radius error               float64
+texture error              float64
+perimeter error            float64
+area error                 float64
+smoothness error           float64
+compactness error          float64
+concavity error            float64
+concave points error       float64
+symmetry error             float64
+fractal dimension error    float64
+worst radius               float64
+worst texture              float64
+worst perimeter            float64
+worst area                 float64
+worst smoothness           float64
+worst compactness          float64
+worst concavity            float64
+worst concave points       float64
+worst symmetry             float64
+worst fractal dimension    float64
+target                       int64
+dtype: object
+标签分布：
+ target
+1    357
+0    212
+Name: count, dtype: int64
+
+==================================================
+【异常值检测与处理】
+去除异常值前： (569, 31)
+去除异常值后： (277, 31)
+异常值已过滤完成！
+
+==================================================
+【数据标准化】
+归一化完成，数据已统一到均值=0，标准差=1
+
+==================================================
+【划分训练集与测试集】
+训练集形状： (193, 30)
+测试集形状： (84, 30)
+训练集标签分布：
+ target
+1    178
+0     15
+Name: count, dtype: int64
+测试集标签分布：
+ target
+1    77
+0     7
+Name: count, dtype: int64
+
+==================================================
+【保存预处理后数据】
+✅ 预处理全部完成！
+已保存文件：
+1. data_scaled.csv    标准化完整数据
+2. X_train.npy        训练集特征
+3. X_test.npy         测试集特征
+4. y_train.npy        训练集标签
+5. y_test.npy         测试集标签
+6. feature_names.csv  特征列名
+==================================================
+
+进程已结束，退出代码为 0
